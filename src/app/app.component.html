@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<br>
+<div class="container">
+  <div class="dropdown" *ngIf="autenticado">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Escola Municipal
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button" routerLink="/incluirEscola">Incluir Escola</button>
+        <button class="dropdown-item" type="button" routerLink="/listarEscola">Listar Escola</button>
+        <button class="dropdown-item" type="button" (click)="logout()" >Sair</button>
+      </div>
+  </div>
+
+  <div class="alert" role="alert" [hidden]="msg === ''" [class.alert-warning]="msg !== ''">
+      {{msg}}
+  </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <app-login *ngIf="!autenticado"  (eventoAutenticado)="onAutenticar($event)" ></app-login>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <router-outlet *ngIf="autenticado" ></router-outlet>
+</div>

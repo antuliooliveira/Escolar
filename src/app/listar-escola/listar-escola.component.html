@@ -1,0 +1,47 @@
+<br>
+<div class="alert" role="alert" [hidden]="mensagem === '' || !mensagem" [class.alert-warning]="mensagem !== ''">
+    {{mensagem}} 
+</div>
+<br>
+<h5 style="background-color: #d0d5f5; font-style: bold; line-height: 200%"> Lista de Escolas</h5>
+
+<table class="table table-striped table-responsive-sm" style="margin-bottom: 0;" >
+  <thead>
+      <tr>
+        <td align='left'><b>ID</b></td>
+        <td align='center'><b>Nome</b></td>
+        <td align='center'><b>Matriculados</b></td>
+        <td align='center'><b>Professores</b></td>
+        <td align='center'><b>Laboratório de Informatica</b></td>
+        <td align='right'><b>Total</b></td>
+        <td align='center'><b>#</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let escola of escolas, let i = index">
+          <td>
+          {{ escola.id }}
+          </td>
+          <td align='center'>
+              {{ escola.nome }}
+          </td>            
+          <td align='center'>
+              {{ escola.matriculados }}
+          </td> 
+          <td align='center'>
+              {{ escola.professores }}
+          </td> 
+          <td align='center'>
+              {{ escola.labinformatica | simNao }}
+          </td>
+          <td align='right'>
+            {{ escola.totalVerba | currency:'BRL':'symbol'}}
+          </td>          
+          <td align='center'>
+            <button class="btn btn-primary btn-sm margin-5" [routerLink]="['/editarEscola', escola.id]" type="button" ><fa name="pencil"></fa></button>
+            <button class="btn btn-primary btn-sm margin-5" (click)="onExcluir(escola.id)" type="button" ><fa name="trash"></fa></button>
+            <button class="btn btn-primary btn-sm" [routerLink]="['/detalharEscola', escola.id]" type="button" ><fa name="search"></fa></button>
+          </td>
+      </tr>
+  </tbody>
+</table>

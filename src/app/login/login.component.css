@@ -1,0 +1,9 @@
+.card {
+    width: 300px;
+    align-items: center;
+    background-color: #d0d5f5;
+    justify-content: center;
+}
+.card-header {
+    font-weight: bold;
+}

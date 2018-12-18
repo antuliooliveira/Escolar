@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+  <div class="row">
+      <div class="col-12">
+          <div class="form-group">
+            <label>Id:</label>{{id}}
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input id="nome" class="form-control" type="text" formControlName="nome" />
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <div class="form-group">
+            <label for="mat">Quantidade de aluno Matriculados</label>
+            <input id="mat" class="form-control" type="text" formControlName="matriculados" />
+        </div>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col-12">
+        <div class="form-group">
+            <label for="prof">Quantidade Professores</label>
+            <input id="prof" class="form-control" type="text" formControlName="professores" />
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <div class="form-group">
+            <label for="labInf">Possui Laboratório de Informática</label>
+            <select class="form-control" id="labInf" formControlName="labinformatica" >
+                <option [value]="null">Selecione</option>
+                <option [value]="true">SIM</option>
+                <option [value]="false">NÃO</option>
+            </select>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary margin-5"  (click)="onGravar()" [disabled]="!form.valid" >Gravar</button>
+    <button class="btn btn-primary" [routerLink]="'/listarEscola'"  >Voltar</button>
+  </div>
+</form>
