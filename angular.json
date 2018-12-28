@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ProjetoFinal": {
+    "ProjetoFinal2": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ProjetoFinal:build"
+            "browserTarget": "ProjetoFinal2:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ProjetoFinal:build:production"
+              "browserTarget": "ProjetoFinal2:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ProjetoFinal:build"
+            "browserTarget": "ProjetoFinal2:build"
           }
         },
         "test": {
@@ -102,7 +102,7 @@
         }
       }
     },
-    "ProjetoFinal-e2e": {
+    "ProjetoFinal2-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
